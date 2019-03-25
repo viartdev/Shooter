@@ -44,10 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8644e00d42054ce41b768a10015cab55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FloorPrefabs:
-  - {fileID: 9170933086316975575, guid: 0c44c2074e280f441988f5dd12ac31ff, type: 3}
-  - {fileID: 1405434550505195292, guid: 818f34b8ae159e64f8ead43d3f4cd106, type: 3}
-  WallPrefab: {fileID: 2026508099205195011, guid: 1aedf9f1d705c19458faa0e58d4d9886,
+  EarthTile: {fileID: 2026508099205195011, guid: ee948ba16e5a3094ca9d3690e8bcf8eb,
+    type: 3}
+  FloorTile: {fileID: 9170933086316975575, guid: 0c44c2074e280f441988f5dd12ac31ff,
     type: 3}
 --- !u!114 &5958444467086178135
 MonoBehaviour:

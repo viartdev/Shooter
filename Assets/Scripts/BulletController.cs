@@ -5,7 +5,8 @@ using UnityEngine.Networking;
 public class BulletController : NetworkBehaviour
 {
     [SerializeField] private float speed = 0.3f;
-    [SerializeField] private float respawnTime = 2.0f;
+    public Weapon.WeaponType BulletType { get; set; }
+    public int BulletDamage { get; set; }
     private Quaternion _rotation;
     private Vector3 _position;
     
@@ -31,24 +32,13 @@ public class BulletController : NetworkBehaviour
     {
         if (col.tag == "Player")
         {
-            col.gameObject.SetActive(false);
-           // RespawnPlayer(col.gameObject);
+            var player = col.gameObject.GetComponent<PlayerController>();
+            player.GetDamage(BulletDamage);
         }
 
         Destroy(this.gameObject);
     }
 
-    private void RespawnPlayer(GameObject player)
-    {
-      //  StartCoroutine(RespawnForTime(player, respawnTime));
-    }
-
-  /*  IEnumerator RespawnForTime(GameObject player, float time)
-    {
-        yield return new WaitForSeconds(time);
-        player.SetActive(true);
-        player.transform.position = new Vector3(3, 3);
-    }*/
 
 
 }
